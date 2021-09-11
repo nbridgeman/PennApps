@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Text, View, StyleSheet, ScrollView } from "react-native";
+import { Button, Text, View, StyleSheet, ScrollView, Pressable } from "react-native";
 
 const ButtonSeparator = () => (
   <View style={styles.buttonSeparator} />
@@ -9,18 +9,18 @@ const TopSeparator = () => (
   <View style={styles.topSeparator} />
 );
 
-const Toggle_Button = (props) => {
+const NewButton = (props) => {
   const [isClicked, setIsClicked] = useState(true);
 
   return (
-      <Button
-        color = "#F0D574"
+      <Pressable
         onPress={() => {
           setIsClicked(false);
         }}
-        disabled={!isClicked}
-        title={isClicked ? props.name : "clicked"}
-      />
+        style={styles.buttonStyle}
+      >
+      <Text style = {styles.buttonText}>{props.name}</Text>
+      </Pressable>
   );
 }
 
@@ -31,9 +31,9 @@ const App = () => {
     <Text style = {styles.titleText}>Treasure Trove</Text>
     <Text style = {styles.subTitleText}>Helping items find their way to those in need.</Text>
     <ButtonSeparator />
-      <Toggle_Button name="Log in" />
+      <NewButton name="Log in" />
       <ButtonSeparator />
-      <Toggle_Button name="Sign up" />
+      <NewButton name="Sign up" />
       <ButtonSeparator />
     </ScrollView>
   );
@@ -56,6 +56,22 @@ const styles = StyleSheet.create({
 
   topSeparator: {
       marginVertical: 32,
+  },
+
+  buttonStyle: {
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: "#F0D574",
+  },
+
+  buttonText: {
+      fontSize: 24,
+      textAlign : "center",
+      color : "white",
   }
 });
 
