@@ -14,9 +14,7 @@ const NewButton = (props) => {
 
   return (
       <Pressable
-        onPress={() => {
-          setIsClicked(false);
-        }}
+      onPress={() => {console.log("Pressed");}}
         style={styles.buttonStyle}
       >
       <Text style = {styles.buttonText}>{props.name}</Text>
@@ -50,6 +48,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     textAlign : "center",
   },
+
   buttonSeparator: {
     marginVertical: 8,
   },
@@ -59,19 +58,23 @@ const styles = StyleSheet.create({
   },
 
   buttonStyle: {
-    alignItems: "center",
-    justifyContent: "center",
+    alignSelf: 'center',
+    justifyContent: 'center',
     paddingVertical: 12,
     paddingHorizontal: 32,
-    borderRadius: 4,
+    borderRadius: 40,
     elevation: 3,
-    backgroundColor: "#F0D574",
+    backgroundColor: 'white',
+    width: 277,
+    borderWidth: 1,
+    borderColor: "black",
+    shadowColor: "black"
   },
 
   buttonText: {
       fontSize: 24,
       textAlign : "center",
-      color : "white",
+      color : "black",
   }
 });
 
