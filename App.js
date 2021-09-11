@@ -9,6 +9,10 @@ const TopSeparator = () => (
   <View style={styles.topSeparator} />
 );
 
+const TitleSeparator = () => (
+    <View style={styles.titleSeparator} />
+)
+
 const NewButton = (props) => {
   const [isClicked, setIsClicked] = useState(true);
 
@@ -27,8 +31,9 @@ const App = () => {
     <ScrollView style = {{backgroundColor : "#FFF8D2"}}>
     <TopSeparator />
     <Text style = {styles.titleText}>Treasure Trove</Text>
-    <Text style = {styles.subTitleText}>Helping items find their way to those in need.</Text>
     <ButtonSeparator />
+    <Text style = {styles.subTitleText}>Helping items find their way to those in need.</Text>
+    <TitleSeparator />
       <NewButton name="Log in" />
       <ButtonSeparator />
       <NewButton name="Sign up" />
@@ -39,14 +44,16 @@ const App = () => {
 
 const styles = StyleSheet.create({
   titleText: {
-    fontSize: 48,
+    fontSize: 56,
     fontWeight: "bold",
     textAlign : "center",
+    paddingHorizontal : 32,
 },
 
   subTitleText: {
     fontSize: 24,
     textAlign : "center",
+    paddingHorizontal : 48,
   },
 
   buttonSeparator: {
@@ -54,7 +61,11 @@ const styles = StyleSheet.create({
   },
 
   topSeparator: {
-      marginVertical: 32,
+      marginVertical: 64,
+  },
+
+  titleSeparator: {
+      marginVertical: 32
   },
 
   buttonStyle: {
