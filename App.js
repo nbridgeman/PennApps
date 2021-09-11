@@ -44,10 +44,11 @@ const App = () => {
 
 const styles = StyleSheet.create({
   titleText: {
-    fontSize: 56,
+    fontSize: 64,
     fontWeight: "bold",
     textAlign : "center",
     paddingHorizontal : 32,
+    fontFamily : "Noteworthy",
 },
 
   subTitleText: {
